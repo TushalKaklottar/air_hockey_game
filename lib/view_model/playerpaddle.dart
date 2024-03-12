@@ -48,22 +48,47 @@ class PlayerPaddle extends BodyComponent with Draggable {
     return false;
   }
 
+  // void setPaddlePosition(Vector2 position) {
+  //   final mouseJointDef = MouseJointDef()
+  //     ..maxForce = body.mass * 1000
+  //     ..frequencyHz = 10
+  //     ..dampingRatio = 0.0
+  //     ..target.setFrom(body.position)
+  //     ..collideConnected = false
+  //     ..bodyA = parentGame.gameBody
+  //     ..bodyB = body;
+  //
+  //   if (mouseJoint == null) {
+  //     mouseJoint = MouseJoint(mouseJointDef);
+  //     world.createJoint(mouseJoint!);
+  //   }
+  //
+  //   mouseJoint?.setTarget(position);
+  // }
+
   void setPaddlePosition(Vector2 position) {
-    final mouseJointDef = MouseJointDef()
-      ..maxForce = body.mass * 1000
-      ..frequencyHz = 10
-      ..dampingRatio = 0.0
-      ..target.setFrom(body.position)
-      ..collideConnected = false
-      ..bodyA = parentGame.gameBody
-      ..bodyB = body;
+    // Check if the world is locked before setting the position
+    if (!parentGame.world.isLocked) {
+      final mouseJointDef = MouseJointDef()
+        ..maxForce = body.mass * 1000
+        ..frequencyHz = 10
+        ..dampingRatio = 0.0
+        ..target.setFrom(body.position)
+        ..collideConnected = false
+        ..bodyA = parentGame.gameBody
+        ..bodyB = body;
 
-    if (mouseJoint == null) {
-      mouseJoint = MouseJoint(mouseJointDef);
-      world.createJoint(mouseJoint!);
+      if (mouseJoint == null) {
+        // Only create the joint if it doesn't exist
+        mouseJoint = MouseJoint(mouseJointDef);
+        // Check again if the world is still not locked before creating the joint
+        if (!parentGame.world.isLocked) {
+          parentGame.world.createJoint(mouseJoint!);
+        }
+      }
+
+      mouseJoint?.setTarget(position);
     }
-
-    mouseJoint?.setTarget(position);
   }
 
   @override

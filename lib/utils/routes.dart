@@ -1,8 +1,8 @@
 import 'package:air_hockey_game/view/screen/home/play_game.dart';
-import 'package:air_hockey_game/view/screen/splash.dart';
+import 'package:air_hockey_game/view/screen/splash_screen/splash.dart';
 import 'package:get/get.dart';
 
-import '../view/screen/game_screen.dart';
+import '../view/screen/home/game_screen.dart';
 
 class MyRoutes {
   static const String _splash = "/";

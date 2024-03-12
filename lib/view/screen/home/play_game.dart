@@ -1,4 +1,4 @@
-import 'package:air_hockey_game/view/screen/game_screen.dart';
+import 'package:air_hockey_game/view/screen/home/game_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import '../../../utils/size.dart';

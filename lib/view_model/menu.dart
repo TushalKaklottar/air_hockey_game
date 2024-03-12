@@ -13,7 +13,7 @@ Widget pauseMenuBuilder(BuildContext buildContext, AirHockeyGame game) {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             GestureDetector(
-                onTap: () {
+                onTap: () async {
                   game.overlays.remove('PauseMenu');
                   game.resumeEngine();
                 },

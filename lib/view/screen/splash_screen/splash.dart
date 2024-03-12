@@ -2,7 +2,7 @@ import 'package:air_hockey_game/view/screen/home/play_game.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
-import '../../utils/size.dart';
+import '../../../utils/size.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);

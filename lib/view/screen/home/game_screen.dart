@@ -1,8 +1,8 @@
 import 'package:flame/game.dart';
 import 'package:flutter/material.dart';
-import '../../view_model/airhocky_game.dart';
-import '../../view_model/menu.dart';
-import '../../view_model/playerpaddle.dart';
+import '../../../view_model/airhocky_game.dart';
+import '../../../view_model/menu.dart';
+import '../../../view_model/playerpaddle.dart';
 
 class GamePage extends StatefulWidget {
   const GamePage({super.key});
@@ -68,11 +68,14 @@ class _GamePageState extends State<GamePage> {
                   'FaceoffMenu': faceoffMenuBuilder,
                   'WinnerMenu': winnerMenuBuilder,
                 },
-                backgroundBuilder: (context) => Container(
-                  decoration: const BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage('assets/images/air_hockey_rink.png'),
-                      fit: BoxFit.cover,
+                backgroundBuilder: (context) => Padding(
+                  padding: const EdgeInsets.all(1),
+                  child: Container(
+                    decoration: const BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage('assets/images/lobby.png'),
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                 ),
