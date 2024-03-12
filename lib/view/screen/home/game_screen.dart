@@ -73,7 +73,7 @@ class _GamePageState extends State<GamePage> {
                   child: Container(
                     decoration: const BoxDecoration(
                       image: DecorationImage(
-                        image: AssetImage('assets/images/lobby.png'),
+                        image: AssetImage('assets/images/lobb.png'),
                         fit: BoxFit.cover,
                       ),
                     ),
