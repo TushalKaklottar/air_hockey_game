@@ -42,7 +42,7 @@ class _GamePageState extends State<GamePage> {
   void initState() {
     super.initState();
     _playerRedScore = 0;
-    _playerBlueScore = 0;
+    _playerBlueScore = 1;
     myAirHockeyGame = AirHockeyGame();
     myAirHockeyGame.paused = false;
     myAirHockeyGame.whoScored = PlayerColor.noPlayer;
